@@ -11,7 +11,7 @@ geothermal_davies2013_v1.nc: $(DATA_FILE) | $(GRID_FILE)
 
 # Fetch/create model grid file (super-grid)
 $(GRID_FILE):
-	wget -O $@ ftp://ftp.gfdl.noaa.gov/perm/Alistair.Adcroft/MOM6-testing/OM4_025/$@
+	cp /archive/Raphael.Dussin/datasets/OM4p125/OM4p125_grid_20200824_noiceshelves_unpacked/$@ $@
 
 # Fetch/create geothermal data file
 $(DATA_FILE): | convert_Davies_2013
@@ -28,5 +28,5 @@ check: $(GENERATED_FILE) | $(MD5_FILE)
 	md5sum -c $(MD5_FILE)
 
 # Remove intermediate/generated files
-clean: 
+clean:
 	-rm -f $(GRID_FILE) $(DATA_FILE) $(GENERATED_FILE)
