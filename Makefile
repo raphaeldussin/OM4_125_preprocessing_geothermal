@@ -11,7 +11,7 @@ geothermal_davies2013_v1.nc: $(DATA_FILE) | $(GRID_FILE)
 
 # Fetch/create model grid file (super-grid)
 $(GRID_FILE):
-	cp /archive/Raphael.Dussin/datasets/OM4p125/OM4p125_grid_20200824_noiceshelves_unpacked/$@ $@
+	cp /archive/Raphael.Dussin/datasets/OM4p125/OM4p125_grid_20200921_noiceshelves_unpacked/$@ $@
 
 # Fetch/create geothermal data file
 $(DATA_FILE): | convert_Davies_2013
